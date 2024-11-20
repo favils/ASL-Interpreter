@@ -4,21 +4,83 @@
 
 # Containerized App Exercise
 
-## Description
+## **Overview**
 
-The ASL interpreter app uses machine learning to recognize American Sign Language gestures from images captured from a live camera feed.
+The ASL Interpreter app leverages **machine learning** to recognize **American Sign Language (ASL)** gestures from live camera feeds. Designed with **accessibility** in mind, this app provides a seamless, containerized experience using three main components:  
 
-Designed for accessibility and ease of use, it offers a seamless, containerized experience that runs across three subsystems: gesture recognition, a web interface, and a database.
+- **Gesture Recognition**  
+- **Web Interface**  
+- **Database**  
 
-Following are some gestures the app can detect:
+### **Features**  
 
-![gesture1](images/gesture1.png)
-![gesture2](images/gesture2.png)
-![gesture3](images/gesture3.png)
-![gesture4](images/gesture4.png)
-![gesture5](images/gesture5.png)
+Our app can recognize the following ASL gestures:
 
-## Team
+<div align="center">
+  <img src="images/gesture1.png" alt="ASL Gesture 1" width="150"/>
+  <img src="images/gesture2.png" alt="ASL Gesture 2" width="150"/>
+  <img src="images/gesture3.png" alt="ASL Gesture 3" width="150"/>
+  <br>
+  <img src="images/gesture4.png" alt="ASL Gesture 4" width="150"/>
+  <img src="images/gesture5.png" alt="ASL Gesture 5" width="150"/>
+</div>
+
+
+## Demo
+
+Get a glimpse of the app in action:  
+
+<div align="center">
+  <img src="images/demo.gif" alt="App Interface Demo" width="80%"/>
+</div>
+
+## **Getting Started**
+
+### **Prerequisites**
+Ensure the following are installed on your system:
+
+- **[Docker](https://www.docker.com/products/docker-desktop)**  
+  Download and install Docker Desktop for your operating system.  
+
+- **[Docker Compose](https://docs.docker.com/compose/install/)**  
+  Follow the official Docker Compose installation guide. 
+
+### Setup and Run
+1. First, clone the repository into your preferred IDE or terminal.
+
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
+
+2. Build and start the app using Docker Compose:
+
+    ```bash
+    docker-compose up
+    ```
+
+    This will start all three containers.
+
+3. Open the app in your browser at: 
+
+    **http://localhost:5002/**
+
+4. Allow camera access when prompted for gesture recognition.
+
+### Stoppping the Containers
+-  Stop all containers:
+
+    ```bash
+    docker-compose stop
+    ```
+
+- Stop and remove containers:
+
+    ```bash
+    docker-compose down
+    ```
+
+## Meet the Team
 
 [Safia Billah](https://github.com/safiabillah)
 
@@ -28,34 +90,6 @@ Following are some gestures the app can detect:
 
 [Fatima Villena](https://github.com/favils)
 
-## Configuration
+## Project Management
 
-First, clone the repository into your preferred IDE or terminal.
-
-Then build the app using docker compose.  Run the command in the root directory of the project:
-
-```bash
-docker-compose up
-```
-
-This will start all three containers.
-
-Once complete, you can check out the program for yourself at the url: http://localhost:5002/
-
-Once in the browser, you will be prompted and asked to access your camera.  Just click "allow".
-
-You can stop all three containers by clicking CRTL+C or enter into your terminal:
-
-```bash
-docker-compose stop
-```
-
-You can also stop AND remove all containers by running:
-
-```bash
-docker-compose down
-```
-
-## Task Board
-
-[Task Board](https://github.com/orgs/software-students-fall2024/projects/119/views/1)
+Check out our [Task Board](https://github.com/orgs/software-students-fall2024/projects/119/views/1) for progress tracking.
