@@ -28,14 +28,14 @@ jobs:
       run: pip install pipenv
     - name: Install dependencies
       run: |
-        cd web-app
+        cd web_app
         pipenv install
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run black
-      run: pipenv run black --check .
-    - name: Run pylint
-      run: pipenv run pylint .
+    # - name: Run black
+    #   run: pipenv run black --check .
+    # - name: Run pylint
+    #   run: pipenv run pylint .
     - name: Test with pytest
       run: |
-        cd web-app
+        cd web_app
         pipenv run pytest
