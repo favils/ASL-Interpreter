@@ -17,7 +17,7 @@ from bson import ObjectId
 def create_app():
 
     app = Flask(__name__)
-    client = MongoClient("mongodb://mongodb:27017/")
+    client = MongoClient(os.getenv("MONGO_URI", "mongodb://mongodb:27017/"))
 
     db = client.asl_db
 
