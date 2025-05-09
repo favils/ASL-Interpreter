@@ -16,4 +16,4 @@ RUN pipenv install gunicorn
 
 EXPOSE 5000
 
-CMD ["pipenv", "run", "gunicorn", "app:app", "-b", "0.0.0.0:5000"]
+CMD ["pipenv", "run", "gunicorn", "app:create_app()", "-b", "0.0.0.0:5000"]
