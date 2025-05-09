@@ -8,15 +8,16 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY Pipfile Pipfile.lock ./
+RUN pip install --no-cache-dir pipenv && \
+    pipenv install --deploy --ignore-pipfile
 
-COPY . /app
+COPY . .
+
+RUN pipenv install gunicorn
 
 ENV PYTHONUNBUFFERED=1
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_PORT=5001
 
 EXPOSE 5001
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5001"]
+CMD ["pipenv", "run", "gunicorn", "app:app", "-b", "0.0.0.0:5001"]

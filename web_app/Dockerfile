@@ -2,18 +2,16 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY Pipfile Pipfile.lock /app/
+COPY Pipfile Pipfile.lock ./
+RUN pip install --no-cache-dir pipenv && \
+    pipenv install --deploy --ignore-pipfile
 
-RUN pip install --no-cache-dir pipenv && pipenv install --deploy --ignore-pipfile
-
-COPY . /app/
-
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_RUN_PORT=5000
+COPY . .
 
 RUN pipenv install gunicorn
 
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 5000
 
-CMD ["pipenv", "run", "gunicorn", "app:create_app()", "-b", "0.0.0.0:5000"]
+CMD ["pipenv", "run", "gunicorn", "app:app", "-b", "0.0.0.0:5000"]
