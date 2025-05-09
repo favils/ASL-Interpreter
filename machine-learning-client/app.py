@@ -30,7 +30,7 @@ load_dotenv()
 #     .pack(pady=15, padx=300)
 
 app = Flask(__name__)
-client = MongoClient("mongodb://mongodb:27017/")
+client = MongoClient(os.getenv("MONGO_URI", "mongodb://mongodb:27017/"))
 
 db = client.asl_db
 
