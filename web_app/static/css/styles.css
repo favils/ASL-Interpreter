@@ -10,7 +10,7 @@ body {
 
 .bg {
     width: 90vw;
-    height: 80vmin;
+    height: 80vh;
     border-radius: 5rem;
     background-image:
         radial-gradient(at 39% 20%, hsla(25,37%,84%,1) 0px, transparent 50%),
@@ -73,7 +73,6 @@ section {
     background-color: #fff;
     text-align: center;
     width: 42vw;
-    height: auto;
 }
 
 video {
@@ -196,76 +195,6 @@ a.home:hover {
     color:#fff;
 }
 
-
-@media (max-width: 1024px) {
-    h1, .header {
-        font-size: 3rem;
-        width: 80%;
-    }
-
-    h2, .head {
-        width: 80%;
-    }
-
-    section, video {
-        width: 80vw;
-    }
-
-    .info {
-        font-size: 0.8rem;
-        bottom: 25%;
-        right: 5%;
-    }
-
-    button, a.history, a.home {
-        width: 80%;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    h1, .header {
-        font-size: 2.2rem;
-        text-align: center;
-    }
-
-    h2, .head {
-        width: 90%;
-        font-size: 0.95rem;
-    }
-
-    section, video {
-        width: 90vw;
-    }
-
-    .info {
-        display: none;
-    }
-
-    .scrollable-container {
-        height: 40vh;
-    }
-
-    button, a.history, a.home {
-        width: 100%;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1, .header {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 0.9rem;
-    }
-
-    .desc {
-        font-size: 0.85rem;
-    }
-
-    .scrollable-container {
-        height: 30vh;
-    }
+#result_section {
+    display: none;
 }

@@ -6,6 +6,7 @@ const ctx = canvas.getContext('2d');
 const d = document.querySelector('.desc');
 const h1 = document.querySelector('.head');
 const h2 = document.querySelector('.subtitle');
+const results =  document.getElementById('result_section');
 
 let stream;
 async function startCamera() {
@@ -26,6 +27,7 @@ cameraBtn.addEventListener('click', () => {
     canvas.style.display = "none";
     h1.style.display = "none";
     h2.style.display = "none";
+    results.style.display = "block"
     //clear result section
     const element = document.getElementById('result_section');
     while (element.firstChild) {
