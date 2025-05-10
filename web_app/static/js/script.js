@@ -29,9 +29,8 @@ cameraBtn.addEventListener('click', () => {
     h2.style.display = "none";
     results.style.display = "block"
     //clear result section
-    const element = document.getElementById('result_section');
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
+    while (results.firstChild) {
+        results.removeChild(results.firstChild);
     }
     console.log("Recording started.");
 });
