@@ -4,6 +4,8 @@ const video = document.getElementById('camera-feed');
 const canvas = document.getElementById('snapshot');
 const ctx = canvas.getContext('2d');
 const d = document.querySelector('.desc');
+const h1 = document.querySelector('.head');
+const h2 = document.querySelector('.subtitle');
 
 let stream;
 async function startCamera() {
@@ -22,6 +24,8 @@ cameraBtn.addEventListener('click', () => {
     captureBtn.style.display = "block";
     video.style.display = "block";
     canvas.style.display = "none";
+    h1.style.display = "none";
+    h2.style.display = "none";
     //clear result section
     const element = document.getElementById('result_section');
     while (element.firstChild) {
@@ -31,7 +35,7 @@ cameraBtn.addEventListener('click', () => {
 });
 
 captureBtn.addEventListener('click', () => {
-    d.textContent = "click start camera to redo";
+    d.textContent = "Click start camera to redo";
     d.style.display = "block";
     cameraBtn.style.display = "block";
     captureBtn.style.display = "none";
@@ -54,18 +58,15 @@ captureBtn.addEventListener('click', () => {
         .then((data) => {
             //console.log("Snapshot saved: ", data);
 
-            // Create a new section element to append the image and text
             const section = document.getElementById('result_section');
 
-            // Create and append the image element
             const img = document.createElement('img');
-            img.src = 'data:image/png;base64,'+data.output; // Assuming the image URL is provided in the response data
-            img.alt = 'Processed Image'; // Add alt text for the image
+            img.src = 'data:image/png;base64,'+data.output;
+            img.alt = 'Processed Image';
             section.appendChild(img);
 
-            // Create and append the paragraph element with translation or any other data
             const p = document.createElement('p');
-            p.textContent = data.translation; // Assuming the translation is part of the response data
+            p.textContent = data.translation;
             p.classList.add('translation');
             section.appendChild(p);
         })
